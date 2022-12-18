@@ -6,6 +6,13 @@
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
 	<title>project FINAL</title>
 	<style>
+		a{
+			color: black;
+			text-decoration: none;
+		}
+		a:hover{
+			color: rgb(5 158 119);
+		}
 		div {
 			width: 100%;
 			max-width: 100%;
@@ -75,6 +82,7 @@
 		img {
 			border-radius: 5px 5px 0 0;
 		}
+		
 		@media only screen and (max-width: 300px) {
 		.prev, .next,.text {font-size: 11px}
 		}
@@ -97,12 +105,17 @@
 		.header-text-one{
 			display: flex;
 		}
+		.ttt{
+			display: flex; margin-top: 1%; margin-left: 1%;
+		}
 		.nav{
 			margin-top: 1%;
 			margin-left: 1%;
 			font-size: 12pt;
+			overflow: auto;
 			
 		}
+	
 		.nav_text{
 			color: gray;
 			font-size: 10pt;
@@ -126,8 +139,7 @@
 		}
 		.card-inner{
 			margin: 5%;
-			max-width: 90%;
-			font-size: 10pt;
+			max-width: 70%;
 		}
 		.card {
 			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -170,8 +182,56 @@
 		}
 		.end{
 			display: flex;
-			background-color: rgb(248, 241, 241);
+			background-color: rgb(249, 248, 248);
+			font-size: 10pt;
+			padding: 2%;
 		}
+		@media screen and (max-width: 770px) {
+			.kurs{
+				height: 7%;
+				font-size: 9pt;
+			}
+
+			#eur{
+				display: none;
+			}
+			#tenge{
+				display: none;
+			}
+			#newyear{
+				display: none;
+			}
+			#helper{
+				display: none;
+			}
+			#sport{
+				width: 50%;
+				font-size: 9pt;
+			}
+			#iphone{
+				width: 50%;
+				font-size: 9pt;
+			}
+			#online_credit{
+				display: none;
+			}
+			#moch{
+				width: 50%;
+				font-size: 9pt;
+			}
+			#halyk_market{
+				display: none;
+			}
+			#ureg{
+				width: 50%;
+				font-size: 9pt;
+			}
+
+    /*
+    Стили для устройств, у которых ширина viewport меньше или равно 770 пикселей.
+    Это множество мобильных устройств
+    */
+  		}		
 		
 		
 	</style>
@@ -181,10 +241,12 @@
 			<div class="header">
 				<div class="header-text-one">
 					<div class="header-logo">
+						<a href="https://halykbank.kz/">
 						<img src="https://halykbank.kz/themes/halyk/assets/images/logo.svg" alt="halykbank.kz">
+						</a>
 					</div>
 					<div>
-						<div style="display: flex; overflow-y: hidden; margin-top: 1%; margin-left: 1%; ">
+						<div class="ttt">
 							<div>
 								<nav class="nav">
 									<a class="nav_text" href="https://halykbank.kz/">Частным клиентам</a>
@@ -197,8 +259,8 @@
 							
 							<div>
 								<nav class="nav" style="text-align: right;">
-									<a class="nav_text"  href="#">Банк на карте</a>
-									<a class="nav_text"  href="#">Телефон</a>
+									<a class="nav_text"  href="https://halykbank.kz/map/atm">Банк на карте</a>
+									<a class="nav_text"  href="tel:7111">Телефон</a>
 								</nav>
 							</div>
 						</div>
@@ -494,7 +556,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="transfersSlide" style="display: none; padding: 5px; border: 1px solid;">
+				<div id="transfersSlide" style="display: none; padding: 5px;">
 					<div style="border-bottom: #717171; height: 25rem; width: 100%; display: flex;">
 						<div style="margin:1% ;">
 							<div style="border-bottom: 3px solid rgb(221, 216, 216); margin-bottom: 10%;">
@@ -529,7 +591,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="othersSlide" style="display: none; padding: 5px; border: 1px solid;">
+				<div id="othersSlide" style="display: none; padding: 5px;">
 					<div style="border-bottom: #717171; height: 25rem; width: 100%; display: flex;">
 						<div style="margin:1% ;">
 							<div style="border-bottom: 3px solid rgb(221, 216, 216); margin-bottom: 10%;">
@@ -577,7 +639,7 @@
 					<div>
 						
 						<h5>
-							<img src="https://cdn-icons-png.flaticon.com/512/5714/5714731.png" alt="kusr_tenge" style="height: 20px; width: 28px; float: left; margin-right: 10px;">
+							<img id="tenge" src="https://cdn-icons-png.flaticon.com/512/5714/5714731.png" alt="kusr_tenge" style="height: 20px; width: 28px; float: left; margin-right: 10px;">
 							USD: 476/488
 						</h5>
 					</div>
@@ -586,7 +648,7 @@
 							RUB: 7/8
 						</h5>
 					</div>
-					<div>
+					<div id="eur">
 						<h5>
 							EUR: 492/499
 						</h5>
@@ -599,7 +661,7 @@
 					</div>
 				</div>
 				<div class="card-container">
-					<div class="card">
+					<div id="online_credit" class="card">
 						<img src="https://sun9-west.userapi.com/sun9-63/s/v1/ig2/S6XCw585jqklJgZs1GAaKiW9kE6senvMXGVEogGo2gMEfDWY02LquPQ0UBCX9WNFms-O-UL2ZkhIQESD76FpBbMQ.jpg?size=1150x697&quality=95&type=album" alt="market" style="width:100%">
 						<div class="card-inner">
 							<h4><b>Онлайн кредит до 7 миллионов</b></h4>
@@ -615,11 +677,11 @@
 						<a class="button" href="https://halykbank.kz/online-credit">Оформить кредит</a>
 
 					</div>
-					<div class="card">
+					<div id="halyk_market" class="card">
 						<img src="https://sun9-east.userapi.com/sun9-35/s/v1/ig2/6iarRC3AWBqKbyWKKSoF5ohSzSxt5aqcmlKnDKfAfTFW_tvTIDdvYV6zuDH1k7s-qX96ScvuG_WSpVbVBQxEsxss.jpg?size=633x377&quality=95&type=album" alt="market" style="width:100%">
 						<div class="card-inner">
 							<h4><b>Покупки в Халык Маркет</b></h4>
-							<ul>
+							<ul style="max-width: 80%;">
 								<li>
 									Рассрочка на 24 месяцев
 								</li>
@@ -632,7 +694,7 @@
 						<a class="button" href="https://halykmarket.kz/?utm_source=slider_web_market_vitrina&utm_medium=slider_web_market_vitrina&utm_campaign=slider_web_market_vitrina&utm_content=slider_web_market_vitrina&utm_term=slider_web_market_vitrina&_ga=2.233984542.1057255252.1671121208-450011592.1669729776">Подробнее</a>
 
 					</div>
-					<div class="card">
+					<div id="ureg" class="card">
 						<img src="https://sun9-north.userapi.com/sun9-77/s/v1/ig2/MMSd4g4Re69rxOxjaFxcl3ZwN5B_74495M0hjCy25-lPOHfHqZA43IBkHmk3pE_ASUUho-ZPGZjUmzhn47FChf69.jpg?size=629x378&quality=95&type=album" alt="market" style="width:100%">
 						<div class="card-inner">
 							<h4><b>Урегулирование задолженности</b></h4>
@@ -646,7 +708,7 @@
 						<a class="button" href="https://halykbank.kz/credit/uregulirovanie-problemnoj-zadolzhennosti">Подробнее</a>
 
 					</div>
-					<div class="card">
+					<div id="moch" class="card">
 						<img src="https://sun9-east.userapi.com/sun9-21/s/v1/ig2/KEfJIh9ssBaZxyq4OzseNnWa_1GqhuM5usC7Srk8rAP8i9sk5wapBXSFgpzN_-qjJ4wxHaQVXLeHLmxQfvU-EHSm.jpg?size=627x379&quality=95&type=album" alt="market" style="width:100%">
 						<div class="card-inner">
 							<h4><b>Осторожно! Мошенники!</b></h4>
@@ -669,7 +731,7 @@
 					<h2>Предложение от Halyk Market</h2>
 				</div>
 				<div class="card-container">
-					<div class="cardM">
+					<div id="helper" class="cardM">
 						<img src="https://sun9-west.userapi.com/sun9-63/s/v1/ig2/JTWZhXZmsRVxfeVLA0FJ1QCwHr_BLu82Hm8hsMH04NPdb452SFZbWQ15wyifzT0uwCjqy0zzC-QsGIoI1Iu5jzjt.jpg?size=1295x755&quality=95&type=album" alt="market" style="width:100%">
 						<div class="card-inner">
 							<p>
@@ -679,7 +741,7 @@
 						<a class="button" href="https://halykmarket.kz/category/pilesosi?_ga=2.191585834.1057255252.1671121208-450011592.1669729776">Купить на Halyk Market</a>
 
 					</div>
-					<div class="cardM">
+					<div id="sport" class="cardM">
 						<img src="https://sun9-west.userapi.com/sun9-65/s/v1/ig2/lX1KAmHjiC-hTZqCgzvmmw5wFuR9f9P7UhvEvmMirXwM8YQXexICao-jsSLvtboK8pOhwuGanwCbRJegVHxh678f.jpg?size=1290x767&quality=95&type=album" alt="market" style="width:100%">
 						<div class="card-inner">
 							<p>
@@ -689,7 +751,7 @@
 						<a class="button" href="https://halykbank.kz/security">Купить на Halyk Market</a>
 
 					</div>
-					<div class="cardM">
+					<div id="iphone" class="cardM">
 						<img src="https://sun9-east.userapi.com/sun9-17/s/v1/ig2/ipbgcc86YIkgekZbtrRDOLOPu1JmQ1SA_h-WVxgXetG4y5tfq-t7BM2P4izZSTjews7yoOjrxiBDCGqwcPTqtAtZ.jpg?size=1290x774&quality=95&type=album" alt="market" style="width:100%">
 						<div class="card-inner">
 							<p>
@@ -699,7 +761,7 @@
 						<a class="button" href="https://halykmarket.kz/category/smartfoni?utm_source=webhm&utm_medium=vitrina&utm_campaign=banner&utm_content=ladning%20page&_ga=2.20527544.1057255252.1671121208-450011592.1669729776">Купить на Halyk Market</a>
 
 					</div>
-					<div class="cardM">
+					<div id="newyear" class="cardM">
 						<img src="https://sun9-west.userapi.com/sun9-12/s/v1/ig2/bjq_9-ParUS0BvgudGtkzVfcjxVPnPGVkgxHYxQ7AngkNN2EsjLru7mjdiojAKiQjMLqqErHv_BVzXLpvEzR8gtc.jpg?size=1287x763&quality=95&type=album" alt="market" style="width:100%">
 						<div class="card-inner">
 							<p>
@@ -719,25 +781,35 @@
 					<h5>
 						<a href="https://halykbank.kz/tariffs">Тарифы</a> <a href="https://halykbank.kz/documents">Документы</a>
 					</h5>
-					<p>
+					<p style="color:rgb(111 111 111);">
 						Лицензия на проведение банковских и иных операций и деятельности на рынке ценных бумаг №1.2.47/230/38/1 от 3 
 						февраля 2020 года выдана Агентством Республики Казахстан по регулированию и 
-						развитию финансового рынка <br><br> powered by <a href="http://amphibia.kz/">amphibia</a> 
+						развитию финансового рынка <br><br> powered by <a href="http://amphibia.kz/"> <u>amphibia</u></a> 
 					</p>
 				</div>
 				<div>
-					<div style="display: flex;">
+					<div style="display: flex; 
+					align-content: flex-start;">
 						<div>
-							<img src="https://halykbank.kz/themes/halyk/assets/images/appstore.svg" alt="App store" style="background-color: black; width: 150px; border-radius: 10px;">
+							<a href="https://apps.apple.com/us/app/homebank-kz/id440635615"><img src="https://halykbank.kz/themes/halyk/assets/images/appstore.svg" alt="App store" style="background-color: black; width: 100%; border-radius: 10px;">
+							</a>
 						</div>
 						<div>
-							<img src="https://halykbank.kz/themes/halyk/assets/images/google-play.svg" alt="google play" style="background-color: black; width: 150px; border-radius: 10px;">
+							<a href="https://play.google.com/store/apps/details?id=kz.kkb.homebank">
+							<img src="https://halykbank.kz/themes/halyk/assets/images/google-play.svg" alt="google play" style="background-color: black; width: 100%; border-radius: 10px;">
+							</a>
 						</div>
 						<div>
-							<img src="https://halykbank.kz/themes/halyk/assets/images/appgallery.svg" alt="App gallery" style="background-color: black; width: 150px; border-radius: 10px;">
+							<a href="https://appgallery.cloud.huawei.com/ag/n/app/C102945379?locale=ru_RU&source=halykbank.kz">
+							<img src="https://halykbank.kz/themes/halyk/assets/images/appgallery.svg" alt="App gallery" style="background-color: black; width: 100%; border-radius: 10px;">
+							</a>
 						</div>
 					</div>
 					<div style="text-align: center;">
+						<p>Мы в соц. сетях</p>
+						<a href="https://www.facebook.com/halykbank/">facebook</a>	
+						<a href="https://www.instagram.com/halykbank.kz/">instagram</a>
+						<a href="https://twitter.com/halykbank_kz">twitter</a>
 					</div>
 				</div>
 				
