@@ -25,7 +25,7 @@
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
-			color: black;
+			color: rgb(194, 0, 0);
 			transition: all .0s;
 		}
 
@@ -137,11 +137,54 @@
         opacity: 0;
         animation: ani 2.5s forwards;
         }
+        #iphonerek{
+            width: 25%; margin-left: 10%;
+        }
+        #mobile{
+            padding:5%; width: 50%;
+        }
+        #setup{
+            text-align: center;
+        }
+        #creditpogashen{
+            display: flex; flex-wrap: wrap;
+        }
+        #creditpogashenimg{
+            width: 45%;
+        }
+        #creditpogashentext{
+            width: 45%;
+        }
+        
 
         @keyframes ani {
         0% {opacity: 0;}
         100% {opacity: 1;}
         }
+        @media screen and (max-width: 770px) {
+            #iphonerek{
+                width: 70%;
+            }
+            #mobile{
+                margin: 5%;
+            }
+            #creditpogashenimg{
+                width: 80%;
+                margin: 10%;
+            }
+            #creditpogashentext{
+                margin: 10%;
+                max-width: 80%;
+            }
+            .menu-btn span{
+				background-color: #717171;
+				color: #717171;
+			}
+            .nav{
+				display: none;
+			}
+
+  		}	
     </style>
 </head>
 <body>
@@ -562,8 +605,8 @@
                 <div>
                     <img src="https://sun9-west.userapi.com/sun9-16/s/v1/ig2/hlJaOdyWLwqdNg4a54N0K01Q9nrhw-7ylEYrEyKO3GdGLRLE6omfryT_ZQub9uuevFUmjiYP5fZPgGZ146FhX2VA.jpg?size=1847x767&quality=95&type=album" alt="5minuts">
                 </div>
-                <div style="display: flex;">
-                    <div style="padding:10%;">
+                <div style="display: flex; flex-wrap: wrap;">
+                    <div id="mobile" >
                         <h1>Получить онлайн-кредит в 3 шага!</h1>
                         <p>
                             <strong>ШАГ 1</strong>  – скачайте мобильное приложение Halyk Homebank (ios, android) <br>
@@ -573,8 +616,8 @@
                             Доступно кредитование самозанятых, военнослужащих и пенсионеров
                         </p>
                     </div>
-                    <div>
-                        <img src="https://sun9-west.userapi.com/sun9-5/s/v1/ig2/jmwIhzqFGOKkfpn6Gv9z7sj_9KYLle701wT1fHcVih7soIfSe3bOretHWE9WeY89mgcisPFIWxnh3t8tI10pmJ0G.jpg?size=417x742&quality=95&type=album" alt="tel" style="text-align: left; width: 50%; margin-left: 20%;">
+                    <div id="iphonerek" >
+                        <img src="https://sun9-west.userapi.com/sun9-5/s/v1/ig2/jmwIhzqFGOKkfpn6Gv9z7sj_9KYLle701wT1fHcVih7soIfSe3bOretHWE9WeY89mgcisPFIWxnh3t8tI10pmJ0G.jpg?size=417x742&quality=95&type=album" alt="tel">
                     </div>
                 </div>
                 <div>
@@ -582,13 +625,13 @@
                 </div>
                 <div style="text-align: center;">
                     <h2>Как получить кредит</h2>
-                    <iframe width="90%"  src="https://www.youtube.com/embed/XqNHa0r9YW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+                    <iframe width="90%" height="500px" src="https://www.youtube.com/embed/XqNHa0r9YW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
                 </div>
-                <div style="display: flex; flex-wrap: wrap;">
-                    <div style="width: 45%;">
+                <div id="creditpogashen">
+                    <div id="creditpogashenimg">
                         <img src="https://sun9-west.userapi.com/sun9-68/s/v1/ig2/sTP7b_W6zRrKFgThKFS76tZQx-J4c3ZK2QU-0L3AsTmcafJKAgUEOlRz4Wt9lZZWu_0ct4TOfnnDJkIW2on0KRPf.jpg?size=720x568&quality=95&type=album" alt="$">
                     </div>
-                    <div style="width: 45%;">
+                    <div id="creditpogashentext">
                         <h2>Как погашать кредит</h2>
                         <p>
                             1. Сумма ежемесячного платежа списывается автоматически с карты Halyk Bank в дату платежа по графику  <br>
@@ -606,7 +649,7 @@
                         </p>
                     </div>
                 </div>
-                <div style="text-align: center;">
+                <div id="setup">
                     <h1>Установить Halyk Homebank</h1>
                     <p>
                         Зарегистрируйтесь в Halyk Homebank и оформите кредит уже через 5 минут</p>
@@ -746,6 +789,13 @@
 				document.getElementById('scrollNumber').style.display='none';
 			};
 		}
+        let menuBtn = document.querySelector('.menu-btn');
+		let menu = document.querySelector('.menu');
+
+		menuBtn.addEventListener('click', function(){
+			menuBtn.classList.toggle('active');
+			menu.classList.toggle('active');
+		})
 		</script>
     </script>
 </body>
