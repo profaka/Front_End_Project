@@ -140,13 +140,16 @@
 		.card-inner{
 			margin: 5%;
 			max-width: 70%;
+			font-size: 10pt;
+			font-family: Inter,Helvetica Neue,Helvetica,Arial,sans-serif;
+			color: #a8a8a8;
 		}
 		.card {
 			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 			transition: 0.3s;
 			border-radius: 5px;
 			width: 23%;
-			height: 350px;
+			height: 25rem;
 			margin: 2%;
 			
 		}
@@ -186,6 +189,7 @@
 			font-size: 10pt;
 			padding: 2%;
 		}
+		
 		@media screen and (max-width: 770px) {
 			.kurs{
 				height: 7%;
@@ -226,13 +230,95 @@
 				width: 50%;
 				font-size: 9pt;
 			}
+			.nav{
+				display: none;
+			}
+			#btn_nav{
+				display: block;
+				position: absolute;
+				right: 10%;
+			}
+			.headers-logo{
+				width: 110px;
+			}
+
 
     /*
     Стили для устройств, у которых ширина viewport меньше или равно 770 пикселей.
     Это множество мобильных устройств
     */
   		}		
-		
+
+		  header {
+			display: flex;
+			justify-content: flex-end;
+		}
+
+
+		/* Гамбургер иконка */
+		.menu-btn {
+			width: 30px;
+			height: 30px;
+			position: relative;
+			z-index:100;
+			overflow: hidden;
+		}
+
+		.menu-btn span {
+			width: 30px;
+			height: 2px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #222222;
+			transition: all 0.5s;
+		}
+
+		.menu-btn span:nth-of-type(2) {
+			top: calc(50% - 5px);
+		}
+		.menu-btn span:nth-of-type(3) {
+			top: calc(50% + 5px);
+		}
+
+		/* Меняем гамбургер иконку, когда меню открыто */
+		.menu-btn.active span:nth-of-type(1) {
+		display: none;
+		}
+		.menu-btn.active span:nth-of-type(2) {
+		top: 50%;
+		transform: translate(-50%, 0%) rotate(45deg);  
+		}
+		.menu-btn.active span:nth-of-type(3) {
+		top: 50%;
+		transform: translate(-50%, 0%) rotate(-45deg); 
+		}
+
+		/* Меню, которое будет появляться */
+		.menu {
+			position: fixed;
+			z-index: 3;
+			top: 0;
+			left: 50%;
+			width: 50%;
+			height: 100%;
+			padding: 15px;
+		background: #ffffff;
+			transform: translateX(200%);
+			transition: transform 0.5s; 
+		}
+
+		.menu.active {
+			transform: translateX(0);
+		}
+
+		.menu li {
+			list-style-type: none;
+			margin-top: 15px;
+		}
+
+				
 		
 	</style>
 </head>
@@ -242,19 +328,20 @@
 				<div class="header-text-one">
 					<div class="header-logo">
 						<a href="https://halykbank.kz/">
-						<img src="https://halykbank.kz/themes/halyk/assets/images/logo.svg" alt="halykbank.kz">
+						<img src="https://halykbank.kz/themes/halyk/assets/images/logo.svg" alt="halykbank.kz" class="headers-logo">
 						</a>
 					</div>
 					<div>
 						<div class="ttt">
 							<div>
-								<nav class="nav">
-									<a class="nav_text" href="https://halykbank.kz/">Частным клиентам</a>
-									<a class="nav_text" href="https://halykbank.kz/business">Бизнесу</a>
-									<a class="nav_text" href="https://halykbank.kz/halykclub/page/halyk-club">Halyk Club</a>
-									<a class="nav_text" href="https://halykbank.kz/knowledge_base">Halyk Info</a>
-									<a class="nav_text" href="https://halykbank.kz/about/press_center">О банке</a>
-								</nav>
+									<nav class="nav">
+										<a class="nav_text" href="https://halykbank.kz/">Частным клиентам</a>
+										<a class="nav_text" href="https://halykbank.kz/business">Бизнесу</a>
+										<a class="nav_text" href="https://halykbank.kz/halykclub/page/halyk-club">Halyk Club</a>
+										<a class="nav_text" href="https://halykbank.kz/knowledge_base">Halyk Info</a>
+										<a class="nav_text" href="https://halykbank.kz/about/press_center">О банке</a>
+									</nav>
+									
 							</div>	
 							
 							<div>
@@ -262,6 +349,59 @@
 									<a class="nav_text"  href="https://halykbank.kz/map/atm">Банк на карте</a>
 									<a class="nav_text"  href="tel:7111">Телефон</a>
 								</nav>
+								
+							<header id="btn_nav">
+								<div class="menu-btn">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+							</header>
+							
+							<div class="menu">
+								<nav>
+								<ul>
+								  <li><a class="nav_text2" href="https://halykbank.kz/">Частным клиентам</a></li>
+								  <li><a class="nav_text2" href="https://halykbank.kz/business">Бизнесу</a></li>
+								  <li><a class="nav_text2" href="https://halykbank.kz/halykclub/page/halyk-club">Halyk Club</a></li>
+								  <li><a class="nav_text2" href="https://halykbank.kz/knowledge_base">Halyk Info</a></li>
+								  <li><a class="nav_text2" href="https://halykbank.kz/about/press_center">О банке</a></li>
+								  <li><a class="nav_text2" href="https://halykbank.kz/about/press_center">О банке</a></li>
+								  <li><a class="nav_text2" href="https://halykbank.kz/homebank">Home bank</a></li>
+								  <li><a class="nav_text2" href="https://halykbank.kz/promo">Акций</a></li>
+								  <li><a class="nav_text2" href="https://halykbank.kz/credits">
+									<span id="credits">
+										Кредиты
+									</span>
+									</a></li>
+								  <li><a class="nav_text2" href="https://halykbank.kz/market">
+									Маркет
+								</a></li>
+								  <li><a class="nav_text2" href="https://halykbank.kz/instalments">
+									<span id="instalments">
+										Рассрочка
+									</span>
+								</a></li>
+								  <li><a class="nav_text2" href="https://halykbank.kz/cards">
+									<span id="cards">
+										Карта
+									</span>
+								</a></li>
+								  <li>
+									<a class="nav_text2" href="https://halykbank.kz/deposits">
+										<span id="deposite">
+											Депозиты
+										</span>
+									</a></li>
+									<li>
+										<a class="nav_text2" href="https://halykbank.kz/others">
+											<span id="others">
+												Другое
+											</span>
+										</a></li>
+								</ul>
+								</nav>
+							</div>
 							</div>
 						</div>
 						
@@ -818,6 +958,13 @@
 			</div>
 	</div>
 	<script>
+		let menuBtn = document.querySelector('.menu-btn');
+		let menu = document.querySelector('.menu');
+
+		menuBtn.addEventListener('click', function(){
+			menuBtn.classList.toggle('active');
+			menu.classList.toggle('active');
+		})
 		var slideIndex = 1;
 		showSlides(slideIndex);
 		
